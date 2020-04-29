@@ -14,7 +14,6 @@ class MyApp extends StatelessWidget {
       title: 'Nae - A Flutter Blog',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: BlogPage(),
     );

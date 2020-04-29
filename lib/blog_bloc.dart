@@ -1,14 +1,24 @@
+import 'dart:async';
+
 import 'package:flutter/services.dart';
 import 'package:nae/res.dart';
 
 var bloc = Blogbloc();
 
 class Blogbloc {
-  Future<List<String>> getProjectDetails() async {
+  StreamController<List<String>> _controller =
+      StreamController<List<String>>.broadcast();
+
+  Stream<List<String>> get stream => _controller.stream;
+
+  getProjectDetails() async {
     var list = List<String>();
-    list.add(await rootBundle.loadString(Res.post_1));
-    list.add(await rootBundle.loadString(Res.post_2));
-    list.add(await rootBundle.loadString(Res.post_3));
-    return list;
+    for (int i = 1; i < 100; i++) {
+      var post = await rootBundle.loadString('assets/posts/post_$i.md');
+      if (post != null) {
+        list.add(post);
+        _controller.add(list);
+      }
+    }
   }
 }

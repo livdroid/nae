@@ -55,18 +55,15 @@ Vers flutter :
 Moins de 6 mois
 Pas de retours de perte de perf par les testeurs
 
-+
- Flutter does its own UI drawing
+Flutter does its own UI drawing
 Hot reloading
 state
 Asynchronous programming with async/await/Future + dart
 Flutter and Dart have built-in support for both unit testing for logic, and widget testing for UI/interactions
 built-in support for theming
 
--
-
 Flutter paints the UI on its own custom way, it doesn’t create native components.
- nowhere as rich as the plugins you can find for React Native and even Xamarin.
+nowhere as rich as the plugins you can find for React Native and even Xamarin.
 Debugging is not at its best.
 The error screen 
 Creating the UI programmatically 
