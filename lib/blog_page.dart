@@ -11,70 +11,91 @@ class BlogPage extends StatelessWidget {
     bloc.getProjectDetails();
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text(
           'Dimsun, du Flutter et des trucs',
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(
+              color: Color(0xFFD3465A),
+              fontSize: 26,
+              fontWeight: FontWeight.bold),
         ),
-        backgroundColor: Colors.teal,
+        backgroundColor: Color(0xFFD8F2FE),
         elevation: 0,
       ),
       body: Container(
-        child: StreamBuilder(
-          stream: bloc.stream,
-          builder: (context, AsyncSnapshot<List<String>> projectSnap) {
-            if (!projectSnap.hasData) {
-              return Center(
-                child: SpinKitRotatingCircle(
-                  color: Colors.blue,
-                  size: 50.0,
-                ),
-              );
-            }
-            return ListView.builder(
-              shrinkWrap: true,
-              itemCount: projectSnap.data.length,
-              itemBuilder: (context, index) {
-                return Container(
-                  margin: const EdgeInsets.all(20),
-                  width: MediaQuery.of(context).size.width * 0.60,
-                  child: Card(
-                    child: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: MarkdownBody(
-                          onTapLink: (url) {
-                            launch(url);
-                          },
-                          styleSheet: MarkdownStyleSheet(
-                              codeblockDecoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(10),
-                                  border: Border.all(
-                                      style: BorderStyle.solid,
-                                      width: 1,
-                                      color: Colors.black12),
-                                  shape: BoxShape.rectangle),
-                              codeblockPadding: const EdgeInsets.all(20),
-                              code: TextStyle(color: Colors.teal),
-                              h1: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black,
-                                  fontSize: 28),
-                              h2: TextStyle(
-                                  fontWeight: FontWeight.w600,
-                                  color: Colors.black,
-                                  fontSize: 22),
-                              h3: TextStyle(
-                                  fontWeight: FontWeight.w500,
-                                  color: Colors.black,
-                                  fontSize: 18)),
-                          fitContent: true,
-                          data: projectSnap.data[index]),
-                    ),
+        color: Color(0xFFD8F2FE),
+        child: Center(
+          child: StreamBuilder(
+            stream: bloc.stream,
+            builder: (context, AsyncSnapshot<List<String>> projectSnap) {
+              if (!projectSnap.hasData) {
+                return Center(
+                  child: SpinKitRotatingCircle(
+                    color: Color(0xFFE8A2AC),
+                    size: 50.0,
                   ),
                 );
-              },
-            );
-          },
+              }
+              return Container(
+                width: 900,
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: projectSnap.data.length,
+                  itemBuilder: (context, index) {
+                    return Container(
+                      margin: const EdgeInsets.all(30),
+                      child: Card(
+                        elevation: 1,
+                        shape: RoundedRectangleBorder(
+                            side: BorderSide(
+                              color: Colors.black12,
+                            ),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(30))),
+                        color: Colors.white,
+                        child: Padding(
+                          padding: const EdgeInsets.all(35.0),
+                          child: MarkdownBody(
+                              onTapLink: (url) {
+                                launch(url);
+                              },
+                              selectable: true,
+                              styleSheet: MarkdownStyleSheet(
+                                  codeblockDecoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(10),
+                                      border: Border.all(
+                                          style: BorderStyle.solid,
+                                          width: 1,
+                                          color: Colors.black12),
+                                      shape: BoxShape.rectangle),
+                                  codeblockPadding: const EdgeInsets.all(20),
+                                  code: TextStyle(color: Colors.teal),
+                                  a: TextStyle(
+                                    color: Colors.blue,
+                                  ),
+                                  h1: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black,
+                                      fontSize: 26),
+                                  h2: TextStyle(
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.black,
+                                      fontSize: 22),
+                                  h3: TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.black,
+                                      fontSize: 18)),
+                              fitContent: true,
+                              data: projectSnap.data[index]),
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              );
+            },
+          ),
         ),
       ),
     );
