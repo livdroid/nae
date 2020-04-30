@@ -1,73 +1,245 @@
-# Introduction à Flutter, the Dart side of mobile programming
-#flutter
+---
+__Advertisement :)__
 
-Open source
+- __[pica](https://nodeca.github.io/pica/demo/)__ - high quality and fast image
+  resize in browser.
+- __[babelfish](https://github.com/nodeca/babelfish/)__ - developer friendly
+  i18n with plurals support and easy syntax.
 
-Designé pour fonctionner sur Fuchsia OS
-Applications Flutter pour : iOS, android, fuschia, Mac, linux et peut être windows
-## Est-ce vraiment du cross plateforme ?
+You will like those projects!
 
-‘unidirectional data flow’ architecture, or reactive programming
+---
 
-Flutter n’utilise pas vraiment les « sous couches » d’android/ios, pour tout ce qui est hardware (camera, bluetooth) il faut sa propre popote. 
-Ecrit directement ses interfaces graphiques via Skia Engine (Engine de chrome depuis des années)
-
-### Approche cross plateforme classique 
-![](Introduction%20a%CC%80%20Flutter,%20the%20Dart%20side%20of%20mobile%20programming/1*sN5qLPk343XzYMpzZ1EWYQ.png)
-Le passage par des librairies du SDK limite les performances. C’est un gros soucis sur les projet cross plateforme, dès qu’ils deviennent conséquents.
-
-### Approche Flutter
-
-![](Introduction%20a%CC%80%20Flutter,%20the%20Dart%20side%20of%20mobile%20programming/1*5QX7BsNvb8Z8y-f-bYY9Wg.png)
-
-Flutter utilise le binaire ARM, c’est compilé ahead of time, pas besoin de jvm.
-compiled ahead-of-time into native ARM code
-L’engine Skia est compilé dans l’app directement donc déjà en binaire.
-This gives better performance because there’s no JS bridge in the middle to parse and execute the code.
-*Plateforme channels :* 
-Flutter contient directement les widget stock de chaque plateformes mobiles, du coup bonne performances et graphisme typique a chaque plateforme, l’utilisateur n’est pas perdu.
-Permet de mettre en place des interfaces graphiques récentes sur des vieux téléphones.
-Cupertino/Material
-Sur Android la class View, qui est la classe mère de tout les éléments graphiques fait plus de 26k lignes.
-Android utilise l’heritage, Flutter utilise la composition. (Préciser)
-
-## Dart 
-Facile a approcher.
-Ui code prend des décision sur quoi afficher, par exemple selon le résultat de la requête d’un framework.
-Une application Flutter avec requête à une Api REST,  parking de JSON et affichage du résultat dans une list view (recyclerview de flutter) prend 150 lignes environ. UI inclue. Par une personne débutante en Flutter.
-
-Actuellement on est en a Dart 2.1
-
-Sources : 
-https://hackernoon.com/whats-revolutionary-about-flutter-946915b09514
-
-[Flutter: the good, the bad and the ugly – The ASOS Tech Blog – Medium](https://medium.com/asos-techblog/flutter-vs-react-native-for-ios-android-app-development-c41b4e038db9)
-
-https://medium.com/flutter-community/porting-a-75-000-line-native-ios-app-to-flutter-57c6571c57b4
+# h1 Heading 8-)
+## h2 Heading
+### h3 Heading
+#### h4 Heading
+##### h5 Heading
+###### h6 Heading
 
 
-Portage d’une application IOS à plus d’un million de téléchargement 
-60,000 lignes
+## Horizontal Rules
 
-Vers flutter :
+___
 
-30, 000 lignes
-Moins de 6 mois
-Pas de retours de perte de perf par les testeurs
+---
 
-Flutter does its own UI drawing
-Hot reloading
-state
-Asynchronous programming with async/await/Future + dart
-Flutter and Dart have built-in support for both unit testing for logic, and widget testing for UI/interactions
-built-in support for theming
-
-Flutter paints the UI on its own custom way, it doesn’t create native components.
-nowhere as rich as the plugins you can find for React Native and even Xamarin.
-Debugging is not at its best.
-The error screen 
-Creating the UI programmatically 
-
-B2B/MVP
+***
 
 
+## Typographic replacements
+
+Enable typographer option to see result.
+
+(c) (C) (r) (R) (tm) (TM) (p) (P) +-
+
+test.. test... test..... test?..... test!....
+
+!!!!!! ???? ,,  -- ---
+
+"Smartypants, double quotes" and 'single quotes'
+
+
+## Emphasis
+
+**This is bold text**
+
+__This is bold text__
+
+*This is italic text*
+
+_This is italic text_
+
+~~Strikethrough~~
+
+
+## Blockquotes
+
+
+> Blockquotes can also be nested...
+>> ...by using additional greater-than signs right next to each other...
+> > > ...or with spaces between arrows.
+
+
+## Lists
+
+Unordered
+
++ Create a list by starting a line with `+`, `-`, or `*`
++ Sub-lists are made by indenting 2 spaces:
+  - Marker character change forces new list start:
+    * Ac tristique libero volutpat at
+    + Facilisis in pretium nisl aliquet
+    - Nulla volutpat aliquam velit
++ Very easy!
+
+Ordered
+
+1. Lorem ipsum dolor sit amet
+2. Consectetur adipiscing elit
+3. Integer molestie lorem at massa
+
+
+1. You can use sequential numbers...
+1. ...or keep all the numbers as `1.`
+
+Start numbering with offset:
+
+57. foo
+1. bar
+
+
+## Code
+
+Inline `code`
+
+Indented code
+
+    // Some comments
+    line 1 of code
+    line 2 of code
+    line 3 of code
+
+
+Block code "fences"
+
+```
+Sample text here...
+```
+
+Syntax highlighting
+
+``` js
+var foo = function (bar) {
+  return bar++;
+};
+
+console.log(foo(5));
+```
+
+## Tables
+
+| Option | Description |
+| ------ | ----------- |
+| data   | path to data files to supply the data that will be passed into templates. |
+| engine | engine to be used for processing templates. Handlebars is the default. |
+| ext    | extension to be used for dest files. |
+
+Right aligned columns
+
+| Option | Description |
+| ------:| -----------:|
+| data   | path to data files to supply the data that will be passed into templates. |
+| engine | engine to be used for processing templates. Handlebars is the default. |
+| ext    | extension to be used for dest files. |
+
+
+## Links
+
+[link text](http://dev.nodeca.com)
+
+[link with title](http://nodeca.github.io/pica/demo/ "title text!")
+
+Autoconverted link https://github.com/nodeca/pica (enable linkify to see)
+
+
+## Images
+
+![Minion](https://octodex.github.com/images/minion.png)
+![Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
+
+Like links, Images also have a footnote style syntax
+
+![Alt text][id]
+
+With a reference later in the document defining the URL location:
+
+[id]: https://octodex.github.com/images/dojocat.jpg  "The Dojocat"
+
+
+## Plugins
+
+The killer feature of `markdown-it` is very effective support of
+[syntax plugins](https://www.npmjs.org/browse/keyword/markdown-it-plugin).
+
+
+### [Emojies](https://github.com/markdown-it/markdown-it-emoji)
+
+> Classic markup: :wink: :crush: :cry: :tear: :laughing: :yum:
+>
+> Shortcuts (emoticons): :-) :-( 8-) ;)
+
+see [how to change output](https://github.com/markdown-it/markdown-it-emoji#change-output) with twemoji.
+
+
+### [Subscript](https://github.com/markdown-it/markdown-it-sub) / [Superscript](https://github.com/markdown-it/markdown-it-sup)
+
+- 19^th^
+- H~2~O
+
+
+### [\<ins>](https://github.com/markdown-it/markdown-it-ins)
+
+++Inserted text++
+
+
+### [\<mark>](https://github.com/markdown-it/markdown-it-mark)
+
+==Marked text==
+
+
+### [Footnotes](https://github.com/markdown-it/markdown-it-footnote)
+
+Footnote 1 link[^first].
+
+Footnote 2 link[^second].
+
+Inline footnote^[Text of inline footnote] definition.
+
+Duplicated footnote reference[^second].
+
+[^first]: Footnote **can have markup**
+
+    and multiple paragraphs.
+
+[^second]: Footnote text.
+
+
+### [Definition lists](https://github.com/markdown-it/markdown-it-deflist)
+
+Term 1
+
+:   Definition 1
+with lazy continuation.
+
+Term 2 with *inline markup*
+
+:   Definition 2
+
+        { some code, part of Definition 2 }
+
+    Third paragraph of definition 2.
+
+_Compact style:_
+
+Term 1
+  ~ Definition 1
+
+Term 2
+  ~ Definition 2a
+  ~ Definition 2b
+
+
+### [Abbreviations](https://github.com/markdown-it/markdown-it-abbr)
+
+This is HTML abbreviation example.
+
+It converts "HTML", but keep intact partial entries like "xxxHTMLyyy" and so on.
+
+*[HTML]: Hyper Text Markup Language
+
+### [Custom containers](https://github.com/markdown-it/markdown-it-container)
+
+::: warning
+*here be dragons*
+:::
