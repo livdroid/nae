@@ -12,7 +12,7 @@ class Blogbloc {
 
   getProjectDetails() async {
     var list = List<String>();
-    for (int i = 1; i < 100; i++) {
+    for (int i = 1; i < 10; i++) {
       var post = await rootBundle.loadString('assets/posts/post_$i.md');
       if (post != null) {
         list.add(post);

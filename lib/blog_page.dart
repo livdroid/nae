@@ -5,7 +5,12 @@ import 'package:url_launcher/url_launcher.dart';
 
 import 'blog_bloc.dart';
 
-class BlogPage extends StatelessWidget {
+class BlogPage extends StatefulWidget {
+  @override
+  _BlogPageState createState() => _BlogPageState();
+}
+
+class _BlogPageState extends State<BlogPage> {
   @override
   Widget build(BuildContext context) {
     bloc.getProjectDetails();
